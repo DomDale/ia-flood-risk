@@ -11,7 +11,7 @@ from .utils import sorted_by_key  # noqa
 from geopy import distance
 
 def stations_by_distance(stations, p):
-    """Passed a list of station objects and a co-ordinate, returns station objects, closest to farthest."""
+    """Passed a list of station objects and a co-ordinate, returns tuple of station objects, distance, closest to farthest."""
     distances = []
     for n in stations:
         distances.append((n, distance.distance(p, n.coord).km))
