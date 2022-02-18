@@ -15,7 +15,7 @@ def stations_level_over_threshold(stations, tol):
             
 
 def stations_highest_rel_level(stations, N):
-    "returns list of N stations at which water level relative to typical range is highest"
+    "returns list of N stations at which water level relative to typical range is highest, discards unrealistic data, set N=0 to return all"
     stationlevels =[]
     for i in stations:
         if (i.relative_water_level() is not None) and (i.relative_water_level() < 100):
